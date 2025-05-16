@@ -1,23 +1,37 @@
 //pagina cards livre
-import { StyleSheet, Text } from 'react-native';
+import { Header } from '@react-navigation/elements';
+import { StyleSheet, FlatList, SafeAreaView} from 'react-native';
+import data from '@/constants/data';
+import { Item } from '@/components/item';
 
-export default function TabTwoScreen() {
+export default function List() {
   return (
-    <>
-    <Text>PAGINA LIVRE</Text>
-    </>
+  <>
+  <Header headerStyle={styles.header} headerTitleStyle={styles.header} title={'ÁLBUM CHICO DE HOLLANDA (1966)'}></Header>
+   <SafeAreaView>
+    <FlatList data={data} renderItem={({item}) => (
+      <Item name={item.nome} date={item.data} image={item.imagem}/>
+    )} keyExtractor={(item) => item.id}>
+    </FlatList>
+   </SafeAreaView>
+  </>
   );
 }
 
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+const styles = StyleSheet.create ({
+  container: {
+    flex: 1
+  },
+  back:{
+    paddingHorizontal: 20
+  },
+  header: {
+    backgroundColor: 'black',
+    color: 'white',
+    position: 'relative',
   },
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
   },
-});
+})
