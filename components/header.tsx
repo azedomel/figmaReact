@@ -10,12 +10,17 @@ export const Header = () => {
 
 const styles = StyleSheet.create ({
     back: {
-        backgroundColor: 'black',
+        backgroundColor: '#0D2538',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        height: 80
     },
     tt:{
-        color: 'white'
+        color: '#A1DAA1',
+        fontSize: 28,
+        fontWeight: 900,
+        letterSpacing: 1,
+        
     }
 })
